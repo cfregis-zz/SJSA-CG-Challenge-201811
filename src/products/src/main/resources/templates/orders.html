@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Orders</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div style="padding-bottom: 20 px !important;" th:if="${not #lists.isEmpty(orders)}">
+        <h2>Order List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Invoice Code</th>
+                <th>Client</th>
+                <th>View</th>
+                <th>Edit</th>
+            </tr>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}"><a href="/order/${order.id}">Id</a></td>
+                <td th:text="${order.code}">Code</td>
+                <td th:text="${order.client.name}">Description</td>
+                <td><a th:href="${ '/order/' + order.id}">View</a></td>
+                <td><a th:href="${'/order/edit/' + order.id}">Edit</a></td>
+            </tr>
+        </table>
+        <div class="jumbotron">            
+        </div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+Desafio:
+Utilizando Spring-Boot, Hibernate e padrão MVC
+
+Implementar uma API de ordens de serviço utilizando o seguinte cenário:
+
+A API a ser implementada se refere a um sistema de ordem de serviços para atendimento.
+No sistema, o operador pode realizar cadastro de clientes (CRUD), onde para o atendimento deve-se gerar uma ordem de serviço (CRUD), onde cada ordem de serviço deve ter no mínimo um item de serviço. Os itens de serviço também devem ter um CRUD relacionado. Inclusão também de funcionalidade para pesquisar ordens de serviço baseadas no e-mail ou CPF do cliente.
+Regras:
+Todos os campos de todas as classes são obrigatórios.
+Não podem existir dois clientes com mesmo CPF ou E-mail.
+O número da ordem de serviço deve ser gerado sequencialmente (anterior + 1) e deve ter no mínimo 6 dígitos numéricos.
+O E-mail deve ser válido.
+A UF deve ser válida.
+Cada ordem de serviço deve ter no mínimo um item de serviço.
+A ordem de serviço deve retornar também o valor total do serviço.
+Classes:
+Cliente
+Atributos: Nome, E-mail, CPF e Endereço.
+Endereço
+Atributos: Logradouro, CEP, Cidade e UF.
+Ordem de serviço
+Atributos: Número, Cliente e Itens
+Item de serviço
+Atributos: Código, Nome e Valor
+Utilizar o framework QueryDSL para consultas.
+Utilizar o framework Lombok.
+Incluir cache na pesquisa de ordem de serviço.
+Não precisa implementar segurança.
+Utilizar testes automatizados será considerado um Plus.?
